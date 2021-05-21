@@ -1,0 +1,9 @@
+#!/bin/bash
+# set -x
+
+echo "### Launching Redis ###"
+REDIS_PORT=6379
+
+cd $REDIS_HOME
+./src/redis-server --port $REDIS_PORT \
+    --protected-mode no --maxmemory 10g | tee ./redis-sgx.log
