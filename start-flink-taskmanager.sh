@@ -8,6 +8,7 @@ conf_dir=conf
 id=$([ -f "$pid" ] && echo $(wc -l < "$pid") || echo "0")
 FLINK_LOG_PREFIX="/host/flink--$postfix-${id}"
 log="${FLINK_LOG_PREFIX}.log"
+out="./flink--$postfix-${id}.out"
 
 core_num=$CORE_NUM
 job_manager_host=127.0.0.1
@@ -64,7 +65,7 @@ run_taskmanager() {
     -D taskmanager.memory.managed.size=8g \
     -D taskmanager.cpu.cores=1.0 \
     -D taskmanager.memory.task.heap.size=10gb \
-    -D taskmanager.memory.task.off-heap.size=1024mb &
+    -D taskmanager.memory.task.off-heap.size=1024mb 2>&1 | tee $out &
 }
 
 run_taskmanager

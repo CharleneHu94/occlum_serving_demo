@@ -5,6 +5,7 @@ ${FLINK_HOME}/bin/flink list | grep RUNNING | awk '{print $4}' | xargs ${FLINK_H
 ps -ef | grep http.jar | awk '{print $2}' | xargs kill -9
 
 # Stop Flink
+ps -ef | grep TaskManagerRunner | grep -v grep | awk '{print $2}' | xargs kill -9
 ${FLINK_HOME}/bin/jobmanager stop
 
 # Stop Redis

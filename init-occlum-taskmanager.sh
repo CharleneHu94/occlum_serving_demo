@@ -24,6 +24,7 @@ build_flink() {
     mkdir -p image/usr/lib/jvm
     cp -r /usr/lib/jvm/java-11-openjdk-amd64 image/usr/lib/jvm
     cp /lib/x86_64-linux-gnu/libz.so.1 image/lib
+    cp ../so_unzip/* image/lib
     cp $occlum_glibc/libdl.so.2 image/$occlum_glibc
     cp $occlum_glibc/librt.so.1 image/$occlum_glibc
     cp $occlum_glibc/libm.so.6 image/$occlum_glibc
