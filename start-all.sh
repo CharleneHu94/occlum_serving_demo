@@ -14,7 +14,7 @@ echo "redis started"
 echo "flink-jobmanager started"
 
 ./init-occlum-taskmanager.sh
-echo "occlum flink jobmanager image built"
+echo "occlum flink taskmanager image built"
 while ! nc -z $FLINK_TASK_MANAGER_IP $FLINK_JOB_MANAGER_REST_PORT; do
   sleep 1
 done
