@@ -1,8 +1,0 @@
-<ie>
-    <plugins>
-        <plugin name="HETERO" location="libHeteroPlugin.so">
-        </plugin>
-        <plugin name="CPU" location="libMKLDNNPlugin.so">
-        </plugin>
-    </plugins>
-</ie>
